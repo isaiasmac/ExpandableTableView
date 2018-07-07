@@ -15,7 +15,7 @@ struct CellData {
     var sectionData = [Sector]()
 }
 
-class ViewController: UIViewController {
+class ViewController: SideMenuSwiftViewController {
 
     var tableView: UITableView!
     var projects: [Project] = []
@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.green
+        self.navigationItem.title = "View Controller"
         
         setupUI()
         

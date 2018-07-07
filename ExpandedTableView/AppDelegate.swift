@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SideMenuSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,10 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        let vc = ViewController()
+//        let navCtrl = CustomNavigationController(rootViewController: vc)
+//        self.window!.rootViewController = navCtrl
+//        self.window!.makeKeyAndVisible()
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let homeVC = ViewController()
-        self.window!.rootViewController = homeVC
+        let navCtrl = UINavigationController(rootViewController: ViewController())
+        self.window!.rootViewController = SideMenuController(contentViewController: navCtrl, menuViewController: ListMenuVC())
         self.window!.makeKeyAndVisible()
+        
+        SideMenuController.preferences.basic.menuWidth = 240
+        SideMenuController.preferences.basic.statusBarBehavior = .slide
+        SideMenuController.preferences.basic.enablePanGesture = false
+        SideMenuController.preferences.basic.supportedOrientations = [.portrait, .landscape]
         
         return true
     }
