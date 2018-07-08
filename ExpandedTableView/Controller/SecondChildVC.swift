@@ -26,5 +26,9 @@ class SecondChildVC: SideMenuSwiftViewController {
         texto.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         texto.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
     }
+    
+    deinit {
+        print("deinit SecondChildVC")
+    }
 
 }

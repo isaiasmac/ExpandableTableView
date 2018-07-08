@@ -29,8 +29,12 @@ class FavoritesVC: SideMenuSwiftViewController {
         secondChildButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
     }
     
+    deinit {
+        print("deinit FavoritesVC")
+    }
+    
     @objc func pushSecondVC() {
-        self.splitViewController?.showDetailViewController(FavoritesTwoVC(), sender: true)
+        self._pushViewController(vc: FavoritesTwoVC(), animated: true, sender: true)
     }
 
 }

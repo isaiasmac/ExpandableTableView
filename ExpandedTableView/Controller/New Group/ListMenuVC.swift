@@ -12,40 +12,53 @@ import SideMenuSwift
 
 class ListMenuVC: UIViewController {
 
+    let coverView = UIView()
     let favoritesButton = UIButton()
     let secondButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.view.backgroundColor = .white
+        
+        // coverView
+        coverView.backgroundColor = .red
+        self.view.addSubview(coverView)
         
         // favoritesButton
         favoritesButton.setTitle("Favoritos", for: .normal)
         favoritesButton.setTitleColor(.black, for: .normal)
+       // favoritesButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 100.0)
         favoritesButton.addTarget(self, action: #selector(favoritesButtonAction), for: .touchUpInside)
         self.view.addSubview(favoritesButton)
         
         // secondButton
         secondButton.setTitle("Second", for: .normal)
         secondButton.setTitleColor(.black, for: .normal)
+        //secondButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 100.0)
         secondButton.addTarget(self, action: #selector(secondButtonAction), for: .touchUpInside)
         self.view.addSubview(secondButton)
         
         /* Constraints */
         
+        // coverView
+        
+        coverView.translatesAutoresizingMaskIntoConstraints = false
+        //coverView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 16.0).isActive = true
+        coverView.topAnchor.constraint(equalTo: view.safeTopAnchor, constant: 100.0).isActive = true
+        coverView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0).isActive = true
+        coverView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 16.0).isActive = true
+        coverView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: -16.0).isActive = true
+        
         // favoritesButton
         favoritesButton.translatesAutoresizingMaskIntoConstraints = false
-        favoritesButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 136.0).isActive = true
-        favoritesButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        favoritesButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0).isActive = true
+        favoritesButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        favoritesButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         // secondButton
         secondButton.translatesAutoresizingMaskIntoConstraints = false
         secondButton.topAnchor.constraint(equalTo: favoritesButton.bottomAnchor, constant: 16.0).isActive = true
-        secondButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        secondButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0).isActive = true
-        
+        secondButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         
         let navCtrl = UINavigationController(rootViewController: FavoritesVC())
         sideMenuController?.cache(viewController: navCtrl, with: "1")
@@ -57,6 +70,8 @@ class ListMenuVC: UIViewController {
             self.sideMenuController?.revealMenu()
             self.sideMenuController?.hideMenu()
         }
+        
+        print("SuperView: \(self.view.superview)")
     }
     
     

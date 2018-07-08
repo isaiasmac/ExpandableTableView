@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A48AB9820F2B30500D2A2C4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48AB9720F2B30500D2A2C4 /* UIViewController+Extension.swift */; };
+		6A48AB9A20F2B33E00D2A2C4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48AB9920F2B33E00D2A2C4 /* UIView+Extension.swift */; };
 		6A99413320F166D800A414FB /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A99413220F166D800A414FB /* SecondVC.swift */; };
 		6A99413520F1678100A414FB /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A99413420F1678100A414FB /* CustomNavigationController.swift */; };
 		6A99413720F16C7900A414FB /* ListMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A99413620F16C7900A414FB /* ListMenuVC.swift */; };
@@ -29,6 +31,8 @@
 /* Begin PBXFileReference section */
 		3238F5AF8327378C70B1E8EE /* Pods-ExpandedTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpandedTableView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExpandedTableView/Pods-ExpandedTableView.debug.xcconfig"; sourceTree = "<group>"; };
 		55E600808C0C1E5C56E913C7 /* Pods_ExpandedTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExpandedTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A48AB9720F2B30500D2A2C4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		6A48AB9920F2B33E00D2A2C4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		6A99413220F166D800A414FB /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		6A99413420F1678100A414FB /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		6A99413620F16C7900A414FB /* ListMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMenuVC.swift; sourceTree = "<group>"; };
@@ -62,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A48AB9620F2B2DC00D2A2C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6A48AB9720F2B30500D2A2C4 /* UIViewController+Extension.swift */,
+				6A48AB9920F2B33E00D2A2C4 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		6A99413820F16D6D00A414FB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,9 +82,9 @@
 				6A99414020F17B3000A414FB /* SideMenuSwift */,
 				6AC5371220EDA0B000E5076C /* ViewController.swift */,
 				6A99413220F166D800A414FB /* SecondVC.swift */,
+				6A99414120F17E9E00A414FB /* SecondChildVC.swift */,
 				6A99413920F16DA800A414FB /* FavoritesVC.swift */,
 				6A99414520F1880900A414FB /* FavoritesTwoVC.swift */,
-				6A99414120F17E9E00A414FB /* SecondChildVC.swift */,
 				6A99414320F1827C00A414FB /* Storyboard.storyboard */,
 				6A99414720F188D900A414FB /* EmptyVC.swift */,
 			);
@@ -118,6 +131,7 @@
 		6AC5370F20EDA0AF00E5076C /* ExpandedTableView */ = {
 			isa = PBXGroup;
 			children = (
+				6A48AB9620F2B2DC00D2A2C4 /* Extensions */,
 				6AC5371020EDA0B000E5076C /* AppDelegate.swift */,
 				6AC5372520EDA12700E5076C /* CoreDataStack.swift */,
 				6A99413820F16D6D00A414FB /* Controller */,
@@ -263,7 +277,9 @@
 				6A99413A20F16DA800A414FB /* FavoritesVC.swift in Sources */,
 				6AC5371320EDA0B000E5076C /* ViewController.swift in Sources */,
 				6AC5371120EDA0B000E5076C /* AppDelegate.swift in Sources */,
+				6A48AB9A20F2B33E00D2A2C4 /* UIView+Extension.swift in Sources */,
 				6A99414820F188D900A414FB /* EmptyVC.swift in Sources */,
+				6A48AB9820F2B30500D2A2C4 /* UIViewController+Extension.swift in Sources */,
 				6AC5371920EDA0B000E5076C /* ExpandedTableView.xcdatamodeld in Sources */,
 				6A99414220F17E9E00A414FB /* SecondChildVC.swift in Sources */,
 				6A99413320F166D800A414FB /* SecondVC.swift in Sources */,

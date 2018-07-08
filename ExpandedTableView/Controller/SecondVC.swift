@@ -31,16 +31,12 @@ class SecondVC: SideMenuSwiftViewController {
         
     }
     
+    deinit {
+        print("deinit SecondVC")
+    }
+    
     @objc func pushSecondVC() {
-        self.splitViewController?.showDetailViewController(SecondChildVC(), sender: true)
-        
-        
-//        if (UIDevice.current.userInterfaceIdiom == .pad) {
-//            self.splitViewController?.showDetailViewController(SecondChildVC(), sender: true)
-//        }
-//        else{
-//            self.navigationController?.pushViewController(SecondChildVC(), animated: true)
-//        }
+        self._pushViewController(vc: SecondChildVC(), animated: true, sender: true)
     }
 
 }

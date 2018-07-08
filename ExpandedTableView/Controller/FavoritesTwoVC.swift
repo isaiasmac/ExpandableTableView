@@ -8,13 +8,17 @@
 
 import UIKit
 
-class FavoritesTwoVC: UIViewController {
+class FavoritesTwoVC: SideMenuSwiftViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.brown
         self.navigationItem.title = "FavoritesTwoVC"
+    }
+    
+    deinit {
+        print("deinit FavoritesTwoVC")
     }
 
 }
