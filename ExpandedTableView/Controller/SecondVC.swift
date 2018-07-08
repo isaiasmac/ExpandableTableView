@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SideMenuSwift
 
 class SecondVC: SideMenuSwiftViewController {
 
     let secondChildButton = UIButton()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +21,7 @@ class SecondVC: SideMenuSwiftViewController {
         self.navigationItem.title = "Second VC"
         
         secondChildButton.setTitle("Push SecondChildVC", for: .normal)
-        secondChildButton.setTitleColor(.black, for: .normal)
+        secondChildButton.setTitleColor(.blue, for: .normal)
         secondChildButton.addTarget(self, action: #selector(pushSecondVC), for: .touchUpInside)
         self.view.addSubview(secondChildButton)
         
@@ -30,7 +32,15 @@ class SecondVC: SideMenuSwiftViewController {
     }
     
     @objc func pushSecondVC() {
-        self.navigationController?.pushViewController(SecondChildVC(), animated: true)
+        self.splitViewController?.showDetailViewController(SecondChildVC(), sender: true)
+        
+        
+//        if (UIDevice.current.userInterfaceIdiom == .pad) {
+//            self.splitViewController?.showDetailViewController(SecondChildVC(), sender: true)
+//        }
+//        else{
+//            self.navigationController?.pushViewController(SecondChildVC(), animated: true)
+//        }
     }
 
 }

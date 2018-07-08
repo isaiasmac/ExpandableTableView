@@ -38,20 +38,25 @@ class ListMenuVC: UIViewController {
         favoritesButton.translatesAutoresizingMaskIntoConstraints = false
         favoritesButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 136.0).isActive = true
         favoritesButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        favoritesButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        favoritesButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0).isActive = true
         
         // secondButton
         secondButton.translatesAutoresizingMaskIntoConstraints = false
         secondButton.topAnchor.constraint(equalTo: favoritesButton.bottomAnchor, constant: 16.0).isActive = true
         secondButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        secondButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        secondButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0).isActive = true
         
         
         let navCtrl = UINavigationController(rootViewController: FavoritesVC())
-        self.sideMenuController?.cache(viewController: navCtrl, with: "1")
+        sideMenuController?.cache(viewController: navCtrl, with: "1")
         
         let navCtrlSecond = UINavigationController(rootViewController: SecondVC())
-        self.sideMenuController?.cache(viewController: navCtrlSecond, with: "2")
+        sideMenuController?.cache(viewController: navCtrlSecond, with: "2")
+        
+        DispatchQueue.main.async {
+            self.sideMenuController?.revealMenu()
+            self.sideMenuController?.hideMenu()
+        }
     }
     
     

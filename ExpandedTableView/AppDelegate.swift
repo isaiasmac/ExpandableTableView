@@ -16,17 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        // Split View
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let splitViewController = UISplitViewController()
+        let navCtrl = UINavigationController(rootViewController: SecondVC())
+        splitViewController.viewControllers = [SideMenuController(contentViewController: navCtrl, menuViewController: ListMenuVC()), SecondChildVC()]
+        splitViewController.preferredDisplayMode = .allVisible
+        self.window!.rootViewController = splitViewController
+        self.window!.makeKeyAndVisible()
+        
         
 //        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        let vc = ViewController()
-//        let navCtrl = CustomNavigationController(rootViewController: vc)
-//        self.window!.rootViewController = navCtrl
+//        let navCtrl = UINavigationController(rootViewController: ViewController())
+//        self.window!.rootViewController = SideMenuController(contentViewController: navCtrl, menuViewController: ListMenuVC())
 //        self.window!.makeKeyAndVisible()
         
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        let navCtrl = UINavigationController(rootViewController: ViewController())
-        self.window!.rootViewController = SideMenuController(contentViewController: navCtrl, menuViewController: ListMenuVC())
-        self.window!.makeKeyAndVisible()
         
         SideMenuController.preferences.basic.menuWidth = 240
         SideMenuController.preferences.basic.statusBarBehavior = .slide
